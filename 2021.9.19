@@ -1,0 +1,106 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int num1 = 0;
+	int num2 = 0;
+	int su = 0;
+	scanf("%d%d",&num1,&num2);
+	su = num1 + num2;
+	printf("su=%d\n",su);
+	return 0;
+}
+int main()
+{
+	printf("he");
+
+	return 0;
+//}
+int main()
+{
+	//char arr1 = 
+	//char arr2 []= { 'a' ,'b', 'c' };
+	printf("%c\n", 65);
+	//printf("%s\n", arr2);
+
+	return 0;
+}
+#include<string.h>
+
+int main()
+{
+	printf("\33");
+	return 0;
+//}
+//
+#include<stdio.h>
+int main()
+{
+	int num1 = 0;
+	int num2 = 0;
+	int su = 0;
+	scanf_s("%d%d\n",&num1,&num2);
+	su = num1 + num2;
+	printf("su=%d\n", su);
+	return 0;
+}
+int main()
+{
+	int input = 0;
+	printf("好好学习吗？（1/0）>:");
+	scanf ("%d", &input);
+	if (input == 0)
+	{
+		printf("好offer\n");
+	}
+	else;
+	{
+		printf("回家等死");
+	}
+
+	return 0;
+int main()
+{
+	int line = 0;
+	printf("好好学习");
+	while ( line < 20000)
+	{
+		printf("加一行代码：%d\n",line);
+		line++;
+	}
+	if ("line>20000");
+//	printf("好offer");
+//	return 0;
+//}
+int dd(int x, int y)
+{
+	int z = x + y;
+	return z;
+
+}
+int main()
+{
+	int a = 100;
+	int b = 200;
+	int c = 0;
+	c = dd(a, b);
+	printf(" %d\n", c);
+	
+}
+int main()
+{
+	int ch = ('A');
+	printf(" %c\n", ch);
+		
+	return 0;
+}
+
+int main()
+{
+	int arr[10] = {0};
+	int A = 0;
+		A=sizeof(arr) / sizeof(arr  [0]);
+	printf("%d\n", A);
+
+	return 0;
+}
