@@ -1,0 +1,202 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//int Max(int x, int y)//创造一个新的函数，在全局范围内
+//{
+//	if (x < y)
+//		return y;//如果x<y的话就返回函数本身取y值
+//	else
+//		return x;
+//}
+//int main()
+//{
+//	int num1 = 10;
+//	int num2 = 20;
+//	int max = 0;
+//	max = Max(num1, num2);//运用一个Max函数，但是需要赋值给他，以便之后用printf打印出来。
+//	printf("最大值=%d\n", max);
+//	return 0;//函数结束返回main函数本身
+//}
+//
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = a++;
+//	printf("%d %d\n", a, b);
+//
+//	return 0;
+////}
+//int main()
+//{
+//
+//	double a = 3.14;
+//	printf("%f\n", a);
+//	return 0;
+//}
+//
+////
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;//三目操作符是if和else的简化版，这个是条件操作符；
+//	int max = 0;
+//	max = (a > b ? a: b);
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+
+
+
+
+
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = 0;
+//	if (a > b)
+//		max = a;
+//	else
+//		max = b;
+//	printf("%d\n", max);
+//	return 0;
+//}
+//int main()
+//{
+//	typedef unsigned int uint;
+//	uint a = -20;
+//	printf("%d\n", a);
+//
+//
+//	return 0;
+//int test()//void为无返回型指针类型，不必如int类型一样加一个return 0来结尾；
+//{
+//	int a = 1;
+//		a++;
+//		printf("%d\n", a);
+//		return 0;
+////}
+//void test()
+//{
+//	static int a = 1;
+//	a++;
+//	printf("%d\n", a);
+//
+//
+//}
+//int main()
+//{
+//int i = 0;
+//while (i < 5)
+//{
+//test();
+//	i++;
+//}
+//
+//return 0;
+//}
+//
+//int main()
+//
+//{
+//	extern int jin;
+//	printf("jin=%d\n", jin);
+//	return 0;
+//}
+//extern int Add(x, y);//17年后的visual stdio，不用声明也能用？
+//当外部引用的用static修饰的话，即函数的链接器改变了
+//修饰的全局变量是，会改变全局变量的作用域，，让静态全局变量（即加了static的变量）只能在自己所属文件中使用，
+//但是在局部变量中，确是会延长局部变量的生命周期，即出了局部变量不会死亡，继续累计。
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum = 0;
+//	sum = Add(a, b);
+//	printf("sum=%d\n", sum);
+//
+//	return 0;
+//}
+//#define Max(x,y) (x<y?y:x)//此方法为定义宏，而不是定义一个函数
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = 0;
+//	max = Max (a, b);
+//	printf("max=%d\n", max);
+//
+//
+////	return 0;
+//int main()
+//{
+//	char ch = 'w';
+//	char* pc = &ch;
+//		//* pc = 'a';
+//		//printf("ch=%c\n", ch);
+//	printf("%d\n", sizeof(pc));
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//	int* p = &a;
+//
+//	printf("%d\n", sizeof(p));
+//
+//	return 0;
+//}
+//
+//
+//int main()
+//{
+//	int a = 10;
+//	int* p = &a;
+//	*p = 20;
+//	printf("%d\n", *p);//或者是找a，取的值是一样的
+//
+//
+//	return 0;
+//}
+//struct Book
+//{ 
+//	char name[20];
+//short price;
+//char pubilsh [20];
+//
+//};
+//
+//int main()
+//{
+//	struct Book b1 ={ "C语言程序设计",5,"苏子铭" };
+//	printf("%s %d  %s\n", b1.name, b1.price, b1.pubilsh);//数组指代汉字时需要用""表示，而变量不用；
+//
+//	return 0;
+//}
+//
+//
+struct Book {
+	char name[20];
+	short price;
+
+};
+int main()
+{
+	struct Book b1 = { "苏子铭的书",55 };
+	//printf("%s %d\n", b1.name, b1.price);
+	struct Book* bk = &b1.name;
+	//b1.price = 15;//这里由于是一个变量，价格在结构体中已经定义为一个变量，所以可以直接改，而数组不能直接改；
+	//* bk = 15;
+		//printf("%d\n", b1.price);
+	//return 0;
+	printf("%s\n", bk->name);//两种表达方式是一样的。
+	printf("%s\n", (*bk).name);
+
+	strcpy(b1.name, "c++");//改数组需要创建一个strcpy=>string copy的函数，引入数组再""在里面改；
+	printf("%s\n", b1.name);//同时string是一个库函数，需要定义一个#include <string.h>
+	return 0;
+}
+
