@@ -1,0 +1,65 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//int Max(int x, int y)//创造一个新的函数，在全局范围内
+//{
+//	if (x < y)
+//		return y;//如果x<y的话就返回函数本身取y值
+//	else
+//		return x;
+//}
+//int main()
+//{
+//	int num1 = 10;
+//	int num2 = 20;
+//	int max = 0;
+//	max = Max(num1, num2);//运用一个Max函数，但是需要赋值给他，以便之后用printf打印出来。
+//	printf("最大值=%d\n", max);
+//	return 0;//函数结束返回main函数本身
+//}
+//
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = a++;
+//	printf("%d %d\n", a, b);
+//
+//	return 0;
+////}
+//int main()
+//{
+//
+//	double a = 3.14;
+//	printf("%f\n", a);
+//	return 0;
+//}
+//
+////
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;//三目操作符是if和else的简化版，这个是条件操作符；
+//	int max = 0;
+//	max = (a > b ? a: b);
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+
+
+
+
+
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int max = 0;
+	if (a > b)
+		max = a;
+	else
+		max = b;
+	printf("%d\n", max);
+	return 0;
+}
+
