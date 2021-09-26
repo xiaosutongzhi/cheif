@@ -1,0 +1,16 @@
+import random
+
+su21 = []
+for i in range(50):
+    su21.append(random.randint(0,50))
+    su21.sort()
+print(su21)
+last = su21[-1]
+for i in range(len(su21) - 2, -1, -1):
+    if last == su21[i]:
+        del su21[i]
+    else:
+        last = su21[i]
+print(su21)
+for i in su21:
+    print(i)
