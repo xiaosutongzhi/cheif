@@ -1,0 +1,36 @@
+
+
+def quicksort(a, low, high):
+    i = low
+    j = high
+    if i >= j:
+        return a
+    key = a[i]
+    while i < j:
+        while i < j and a[j] >= key:
+            j -= 1
+        a[i] = a[j]
+        while i < j and a[i] <= key:
+            i += 1
+        a[j] = a[i]
+    a[i] = key
+    quicksort(a, low, i-1)
+    quicksort(a, j+1, high)
+
+def binarySearch(key, su21, lo, hi):
+    if hi <= lo: return 0
+    mid = (hi+lo)//2
+    if su21[mid] > key:
+        return binarySearch(key, su21, lo, mid-1)
+    elif su21[mid] < key:
+        return binarySearch(key, su21, mid+1, hi)
+    else:
+        return mid
+
+def main():
+    su21 = [random.randint(0,50) for i in range(20)]
+    print(su21)
+    quicksort(su21, 0, len(su21)-1)
+    print(su21)
+    print("索引", binarySearch(21, su21, 0, len(su21)-1))
+if __name__ == '__main__':main()
