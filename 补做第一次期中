@@ -1,0 +1,40 @@
+import random
+
+
+def binarySearch(key, a):
+    low = 0
+    high = len(a)-1
+    while low <= high:
+        mid = (low+high)//2
+        if a[mid] < key:
+            low = mid+1
+        elif a[mid] > key:
+            high = mid-1
+        else:
+            return mid
+    return 0
+
+def quickSort(a, low, high):
+    i = low
+    j = high
+    key = a[i]
+    if i >= j:
+        return a
+    while i < j:
+        while a[j] >= key:#必须先用j向前搜索，然后用j的值赋值于a【i】，这样才可确保有值不丢，因key就保留了先前a【i】的值
+            j -= 1
+        a[i] = a[j]
+        while a[i] <= key:
+            i += 1
+        a[j] = a[i]
+    a[i] = key
+    quickSort(a, low, i-1)
+    quickSort(a, j+1, high)
+
+def main():
+    su21 = [random.randint(0, 50) for i in range(20)]
+    print(su21)
+    quickSort(su21, 0, len(su21)-1)
+    print(su21)
+    print("索引", binarySearch(21, su21))
+if __name__ == '__main__':main()
